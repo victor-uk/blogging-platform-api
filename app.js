@@ -1,35 +1,20 @@
-/**
- * Requirements
- * Create a RESTFUL API for a personal blogging platform. The API should allow users to perform the following operations:
 
- * Create a new blog post
- * Update an existing blog post
- * Delete an existing blog post
- * Get a single blog post
- * Get all blog posts
- * Filter blog posts by a search term
- */
-
-/** Global variables */ 
+/** Global variables */
 const express = require('express')
 const app = express()
-const posts = require('./dummy-data')
+const postsApi = require('./routes/postsApi')
+const queryApi = require('./routes/queryApi')
 
 /** Middleware */
-app.use(express.json()) 
+app.use(express.json())
 
-/** Routing */
-app.get('/api/posts', (req, res) => {
-    return res.status(200).json({success: true, data: posts})
-})
+app.use(express.urlencoded({ extended: false }))
 
-app.get('/api/posts/:id', (req, res) => {
-    return res.status(200).json({success: true, data: posts})
-})
+app.use('/api/v1/posts', postsApi)
 
+app.use('/api/v1/query', queryApi)
 
 /** Listening */
 app.listen(5000, () => {
-    console.log(`Server is listening on port 5000`);
-    
+  console.log(`Server is listening on port 5000`)
 })
