@@ -1,6 +1,6 @@
 # Blogging Platform API
 
-This is my first backend project, a RESTful API for a blogging platform built with Node.js and Express.
+This is my first backend project, a RESTful API for a blogging platform built with Node.js and Express. This project is based on the [roadmap.sh Blogging Platform API project](https://roadmap.sh/projects/blogging-platform-api).
 
 ## Features
 
