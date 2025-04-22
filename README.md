@@ -47,13 +47,23 @@ The server will start on `http://localhost:3000` by default.
 - `PUT /posts/:id` - Update a post's content
 - `DELETE /posts/:id` - Delete a post
 
+### Search
+
+- `GET /query` - Search posts with filters
+  - Query parameters:
+    - `query`: General search across all string fields
+    - `tag`: Filter by tag
+    - `title`: Filter by title
+    - `category`: Filter by category
+
 ## Project Structure
 
 ```
 blogging-platform-api/
 ├── app.js              # Main application file
 ├── routes/             # API routes
-│   └── postsApi.js     # Posts endpoints
+│   ├── postsApi.js     # Posts endpoints
+│   └── queryApi.js     # Search endpoints
 ├── dummy-data.js       # Sample data
 ├── date.js            # Utility functions
 └── package.json       # Project dependencies
