@@ -1,6 +1,6 @@
 # Blogging Platform API
 
-A RESTful API for a blogging platform built with Node.js and Express.
+This is my first backend project, a RESTful API for a blogging platform built with Node.js and Express.
 
 ## Features
 
