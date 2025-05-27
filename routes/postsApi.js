@@ -5,17 +5,12 @@ const {
   getSinglePost,
   createPost,
   updatePost,
-  deletePost
+  deletePost,
+  getPostsByQuery
 } = require('../controllers/useControllers')
 
-router.get('/', getAllPosts)
-
-router.get('/:id', getSinglePost)
-
-router.post('/', createPost)
-
-router.put('/:id', updatePost)
-
-router.delete('/:id', deletePost)
+router.route('/').get(getAllPosts).post(createPost)
+router.route('/:id').get(getSinglePost).put(updatePost).delete(deletePost)
+router.route('/query').get(getPostsByQuery) 
 
 module.exports = router
