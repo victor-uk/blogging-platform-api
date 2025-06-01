@@ -13,7 +13,9 @@ const BlogSchema = new mongoose.Schema({
     },
     category: {
         type: String,
-        trim: true,
+        enum: {
+            values: ["Development", "Technology", "Database", "DevOps", "Frontend", "Architecture", "Security", "Cloud"]
+        },
         maxlength: [20, 'category must not be more than 20 characters']
     },
     tags: [{
